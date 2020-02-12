@@ -1,0 +1,15 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600");
+
+// Variables
+@import "variables";
+
+@import "./global.scss";
+@import "./sidebar.scss";
+@import "./nav.scss";
+@import "./dashboard.scss";
+@import "./users.scss";
+@import "./login.scss";
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
