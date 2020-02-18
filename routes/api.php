@@ -7,6 +7,7 @@ Route::get('product/url/get', 'UrlController@index');
 
 Route::post('product/new', 'ProductController@store');
 
+Route::get('product/find/{barcode}', 'ProductController@find');
 
 Route::post('login', 'UserController@authenticate');
 Route::post('register', 'UserController@register');

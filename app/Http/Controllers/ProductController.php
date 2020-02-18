@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Ingredient;
 
 class ProductController extends Controller
 {
@@ -25,15 +26,22 @@ class ProductController extends Controller
             $barcode = $request->barcode ? $request->barcode : "";
             $details = $request->details ? $request->details : "";
 
-            $product = new Product;
+            $barcodeCount = Product::where('barcode', $barcode)
+                                    ->count();
+            
+            if($barcodeCount === 0){
+                $product = new Product;
 
-            $product->name = $name;
-            $product->barcode = $barcode;
-            $product->details = $details;
+                $product->name = $name;
+                $product->barcode = $barcode;
+                $product->details = $details;
 
-            $product->save();
+                $product->save();
 
-            return response()->json(['status' => 'OK', 'result' => $product]);
+                return response()->json(['status' => 'OK', 'result' => $product]);
+            }else{
+                return response()->json(['status' => 'OK', 'result' => "BARCODE ISTNIEJE"]);
+            }
         } catch (\Exception $e) {
             return response()->json(['status' => 'ERR', 'result' => $e->getMessage()]);
         }
@@ -71,6 +79,42 @@ class ProductController extends Controller
             return response()->json(['status' => 'OK', 'result' => ['product' => $product]]);
         } catch (\Exception $e) {
             return response()->json(['status' => 'ERR', 'result' => 'Cannot remove product']);
+        }
+    }
+
+    public function find(Request $request)
+    {
+        try {
+            $barcode = $request->barcode ? $request->barcode : "";
+
+            $product = Product::where('barcode', $barcode)
+                                    ->first();
+            
+            if($product->details){
+                $ingriedients = explode(',', $product->details);
+            
+                $product->ingredients =  Ingredient::where(function ($query) use ($ingriedients) {
+                    foreach ($ingriedients as $ingredient) {
+                        $wordsList = explode(' ', $ingredient);
+
+                        foreach($wordsList as $singleWord){
+                            
+                            //if string is "" or single word then you get all results from ingredients
+                            if($singleWord && strlen($singleWord) > 2){
+                                //var_dump($singleWord);
+                                $query->where('keywords', 'like', '%' . $singleWord . '%', 'or');
+                            }
+                           
+                        }
+                       
+                    }
+                })
+                ->get();
+
+                return response()->json(['status' => 'OK', 'result' => $product]);
+            }
+        } catch (\Exception $e) {
+            return response()->json(['status' => 'ERR', 'result' => $e->getMessage()]);
         }
     }
 }
