@@ -29,7 +29,7 @@ const LoginForm = ({ onLoginSubmit }) => {
             </div>
             <button
                 type="submit"
-                onClick={() => onLoginSubmit(email, password)}
+                onClick={(e) => onLoginSubmit(e, email, password)}
                 className="btn blue-btn"
                 data-testid="button"
             >

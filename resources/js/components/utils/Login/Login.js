@@ -6,7 +6,9 @@ import { MainContext } from "./../../MainContext";
 const Login = () => {
     const context = useContext(MainContext);
 
-    const handleLoginSubmit = (email, password) => {
+    const handleLoginSubmit = (e, email, password) => {
+        e.preventDefault();
+        
         if (email && !password) {
             context.handleShowAlert("Password required", "danger");
         } else if (!email && password) {

@@ -110,9 +110,9 @@ class ProductController extends Controller
                     }
                 })
                 ->get();
-
-                return response()->json(['status' => 'OK', 'result' => $product]);
             }
+
+            return response()->json(['status' => 'OK', 'result' => $product]);
         } catch (\Exception $e) {
             return response()->json(['status' => 'ERR', 'result' => $e->getMessage()]);
         }
