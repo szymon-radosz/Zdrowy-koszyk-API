@@ -11,6 +11,7 @@ import Login from "./utils/Login/Login";
 import { MainContext } from "./MainContext";
 import history from "./History";
 import Products from "./utils/Dashboard/Products/Products";
+import ProductsToAccept from "./utils/Dashboard/ProductsToAccept/ProductsToAccept";
 import Alert from "./utils/Alert/Alert";
 import RegisterAdmin from "./utils/RegisterAdmin/RegisterAdmin"
 import Home from "./utils/Home/Home"
@@ -56,6 +57,11 @@ class Main extends Component {
                 path: "/products",
                 name: "Products",
                 Component: Products
+            },
+            {
+                path: "/products-to-accept",
+                name: "ProductsToAccept",
+                Component: ProductsToAccept
             },
             {
                 path: "/",

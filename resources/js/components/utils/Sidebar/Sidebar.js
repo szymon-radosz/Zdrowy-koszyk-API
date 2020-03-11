@@ -91,6 +91,50 @@ const Sidebar = () => {
                     </div>
                 </li>
                 
+                <li
+                    className={
+                        context.activeMenuSection === "Translations"
+                            ? "sidebar__item sidebar__item--5 sidebar__item--active sidebar__item--active--5"
+                            : "sidebar__item sidebar__item--5"
+                    }
+                >
+                    <div className="sidebar__item--wrapper">
+                        {context.activeMenuSection === "ProductsToAccept" && (
+                            <div className="active-sidebar-item"></div>
+                        )}
+                        <a
+                            href="#"
+                            onClick={() => {
+                                context.handleChangePath("/products-to-accept");
+                                context.handlAactiveMenuSection("ProductsToAccept");
+                            }}
+                        >
+                            <img
+                                className="sidebar-icon"
+                                src="/images/translator.png"
+                                alt="Icon made by Freepik from www.flaticon.com"
+                                title="Translations"
+                            />
+                        </a>
+                        {context.showSidebarText && (
+                            <a
+                                href="#"
+                                onClick={() => {
+                                    context.handleChangePath("/products-to-accept");
+                                    context.handlAactiveMenuSection(
+                                        "ProductsToAccept"
+                                    );
+                                }}
+                            >
+                                <p className="sidebar__item--text">
+                                    Products to accept
+                                </p>
+                            </a>
+                        )}
+                    </div>
+                </li>
+                
+
                 <li className="sidebar__item sidebar__item--7">
                     <div className="sidebar__item--wrapper"></div>
                 </li>
