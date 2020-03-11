@@ -62,3 +62,7 @@ php artisan db:seed --class=IngredientsTableDataSeeder
 composer install
 npm i
 php artisan jwt:secret
+
+## mydevil after pull mv app.js file
+
+cp -a ~/domains/zdrowy-koszyk.live/Zdrowy-koszyk-API/public/js/app.js ~/domains/zdrowy-koszyk.live/public_html/js/
