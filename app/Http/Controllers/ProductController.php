@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Ingredient;
+use App\ScanHistory;
 
 class ProductController extends Controller
 {
@@ -86,9 +87,17 @@ class ProductController extends Controller
     {
         try {
             $barcode = $request->barcode ? $request->barcode : "";
+            $deviceId = $request->deviceId ? $request->deviceId : "";
+            $deviceBrand = $request->deviceBrand ? $request->deviceBrand : "";
 
             $product = Product::where('barcode', $barcode)
                                     ->first();
+
+            $scanHistory = new ScanHistory;
+            $scanHistory->barcode = $barcode;
+            $scanHistory->device_id = $deviceId;
+            $scanHistory->brand = $deviceBrand;
+            $scanHistory->save();
             
             if($product->details){
                 $ingriedients = explode(',', $product->details);
