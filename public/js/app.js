@@ -40805,6 +40805,50 @@ module.exports = g;
 
 /***/ }),
 
+/***/ "./resources/assets/images/appStore.png":
+/*!**********************************************!*\
+  !*** ./resources/assets/images/appStore.png ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/appStore.png?ae0e6df7c92a5c796e21e05da5a363f7";
+
+/***/ }),
+
+/***/ "./resources/assets/images/googlePlay.png":
+/*!************************************************!*\
+  !*** ./resources/assets/images/googlePlay.png ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/googlePlay.png?6e899303f3ffca9ccb062aa14eb8457c";
+
+/***/ }),
+
+/***/ "./resources/assets/images/logo.png":
+/*!******************************************!*\
+  !*** ./resources/assets/images/logo.png ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/logo.png?8d593f2e02d8845d45670f4e1db83918";
+
+/***/ }),
+
+/***/ "./resources/assets/images/phone-header.png":
+/*!**************************************************!*\
+  !*** ./resources/assets/images/phone-header.png ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/phone-header.png?939ad77ea254a618789936dcdd911543";
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -42490,280 +42534,199 @@ var DashboardContainer = function DashboardContainer(_ref) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-helmet */ "./node_modules/react-helmet/lib/Helmet.js");
-/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_helmet__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "./node_modules/@babel/runtime/helpers/slicedToArray.js");
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-helmet */ "./node_modules/react-helmet/lib/Helmet.js");
+/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_helmet__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _assets_images_logo_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../../../assets/images/logo.png */ "./resources/assets/images/logo.png");
+/* harmony import */ var _assets_images_logo_png__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_assets_images_logo_png__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _assets_images_phone_header_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../../../assets/images/phone-header.png */ "./resources/assets/images/phone-header.png");
+/* harmony import */ var _assets_images_phone_header_png__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_assets_images_phone_header_png__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _assets_images_appStore_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../../../../assets/images/appStore.png */ "./resources/assets/images/appStore.png");
+/* harmony import */ var _assets_images_appStore_png__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_assets_images_appStore_png__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _assets_images_googlePlay_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../../../../assets/images/googlePlay.png */ "./resources/assets/images/googlePlay.png");
+/* harmony import */ var _assets_images_googlePlay_png__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_assets_images_googlePlay_png__WEBPACK_IMPORTED_MODULE_6__);
+
+
+
+
+
 
 
 
 var Home = function Home() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_1__["Helmet"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(0),
+      _useState2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState, 2),
+      intervalId = _useState2[0],
+      setIntervalID = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(0),
+      _useState4 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState3, 2),
+      activeDesctiption = _useState4[0],
+      setActiveDescription = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
+      _useState6 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState5, 2),
+      activeCustomQueue = _useState6[0],
+      setActiveCustomQueue = _useState6[1];
+
+  var handleActiveDesctiption = function handleActiveDesctiption(customClickParameter) {
+    clearInterval(intervalId);
+    var active;
+
+    if (customClickParameter) {
+      setActiveCustomQueue(true);
+      setActiveDescription(customClickParameter);
+      active = customClickParameter;
+    } else if (!activeCustomQueue) {
+      active = activeDesctiption;
+    }
+
+    setIntervalID(setInterval(function () {
+      setActiveCustomQueue(false);
+
+      if (active === 5) {
+        setActiveDescription(0);
+        active = 0;
+      } else {
+        setActiveDescription(active);
+        active += 1;
+      }
+    }, 8000));
+  };
+
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    handleActiveDesctiption();
+  }, []);
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_2__["Helmet"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("meta", {
     charSet: "utf-8"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("meta", {
     name: "author",
-    content: "John Doew"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
+    content: "Szymon Radosz"
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("meta", {
     name: "description",
-    content: "Social app - People like you in your neighborhood"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
+    content: "Zdrowy Koszyk - darmowy skaner sk\u0142adu produkt\xF3w"
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("meta", {
     name: "keywords",
-    content: "app, community, friends"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
+    content: "skaner produkt\xF3w, zdrowie, dieta, od\u017Cywianie, zakupy"
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("meta", {
     "http-equiv": "x-ua-compatible",
     content: "ie=edge"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("meta", {
     name: "viewport",
     content: "width=device-width, initial-scale=1.0"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", null, "Social app - People like you in your neighborhood"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("title", null, "Zdrowy Koszyk - darmowy skaner sk\u0142adu produkt\xF3w"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("link", {
     href: "https://fonts.googleapis.com/css?family=Nunito:200,600",
     rel: "stylesheet",
     type: "text/css"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("link", {
     rel: "stylesheet",
     href: "/css/bootstrap.min.css"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("link", {
     rel: "stylesheet",
     href: "/css/style.css"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("link", {
     rel: "stylesheet",
     href: "/css/responsive.css"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-    className: "mainmenu-area",
-    "data-spy": "affix",
-    "data-offset-top": "200"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container-fluid"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "navbar-header"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    type: "button",
-    className: "navbar-toggle navbar-toogle-custom",
-    "data-toggle": "collapse",
-    "data-target": "#primary_menu"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "icon-bar"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "icon-bar"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "icon-bar"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    className: "navbar-brand",
-    href: "#"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "/images/logo.png",
-    alt: "Logo"
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "collapse navbar-collapse",
-    id: "primary_menu"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    className: "nav navbar-nav mainmenu"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "active"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "#home_page"
-  }, "Home")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "#about_page"
-  }, "About")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "#features_page"
-  }, "How it works?")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "#contact_page"
-  }, "Contact")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
-    className: "home-area overlay",
-    id: "home_page"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "row headerRow"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-xs-12 hidden-sm col-md-4"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("figure", {
-    className: "mobile-image"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "/images/header-mobile.png",
-    alt: ""
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-xs-12 col-md-8"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "space-80 hidden-xs"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "People like you", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "in your neighborhood"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "space-20"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "desc"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Find people with same interests like you")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "space-20"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "headerIconText"
-  }, "Download"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "headerIcons"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    target: "_blank",
-    href: "",
-    title: "Download App Store",
-    className: "appStoreHeader headerIcon"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "/images/appStore.png",
-    alt: "App Store"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    target: "_blank",
-    href: "",
-    title: "Google Play",
-    className: "googlePlayHeader headerIcon"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "/images/googlePlay.png",
-    alt: "Google Play"
-  }))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    className: "section-padding",
-    id: "about_page"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "row"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-xs-12 col-md-10 col-md-offset-1"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "page-title text-center"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "aboutImg",
-    src: "/images/logo-sq.png",
-    alt: "About Logo"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "space-20"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
-    className: "title"
-  }, "About"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "space-30"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-    className: "blue-color"
-  }, "Social app"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "space-20"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "There are many people with same interest like you. ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Spend your time with awesome people.")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    className: "feature-area section-padding-top",
-    id: "features_page"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "row"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-xs-12 col-sm-8 col-sm-offset-2"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "page-title text-center"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
-    className: "title"
-  }, "Features"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "space-10"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "How it works?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "space-60"
-  })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "row"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-xs-12 col-sm-6 col-md-4"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "service-box wow fadeInUp",
-    "data-wow-delay": "0.4s"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "box-icon"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "/images/eco.png",
-    alt: "Icon made by Freepik from www.flaticon.com"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Community"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Be a part of open-minded community")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "space-60"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "service-box wow fadeInUp",
-    "data-wow-delay": "0.2s"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "box-icon"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "/images/friends.png",
-    alt: "Icon made by flaticon from www.flaticon.com"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "New friends"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Have some fun with people you feel comfortable with")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "space-60"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "hidden-xs hidden-sm col-md-4"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("figure", {
-    className: "mobile-image"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "/images/feature-image.png",
-    alt: "Feature Photo"
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-xs-12 col-sm-6 col-md-4"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "service-box wow fadeInUp",
-    "data-wow-delay": "0.2s"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "box-icon"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "/images/forum.png",
-    alt: "Icon made by Freepik from www.flaticon.com"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Forum"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Ask questions and get answer")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "space-60"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "service-box wow fadeInUp",
-    "data-wow-delay": "0.6s"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "box-icon"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "/images/people.png",
-    alt: "Icon made by Freepik from www.flaticon.com"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Contacts"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Find people with same interests like you")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "space-60"
-  }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
-    className: "footer-area",
-    id: "contact_page"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "section-padding"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "row"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-xs-12"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "page-title text-center"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
-    className: "title"
-  }, "Contact"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-    className: "dark-color"
-  }, "Help us build better communities"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "space-60"
-  })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "row"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-xs-12 col-sm-12"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "footer-box"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "mailto:contact@social-app.com",
-    title: "Write a message"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "contact@social-app.com"))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "footer-bottom"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "row"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-xs-12 col-md-5"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Copyright \xA9 2020 social-app"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "space-10 hidden visible-xs"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-xs-12 col-md-7"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "footer-menu"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "",
-    target: "_blank",
-    title: "Juff app - Facebook"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "/images/fb.png",
-    alt: "Facebook"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "",
-    target: "_blank",
-    title: "Juff app - Instagram"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "/images/ig.png",
-    alt: "Instagram"
-  }))))))))));
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__main-section--container"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__main-section--wrapper"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__main-section--top-panel"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+    src: _assets_images_logo_png__WEBPACK_IMPORTED_MODULE_3___default.a
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__main-section--content"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__main-section--content-left"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "Zdrowy Koszyk"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", null, "Darmowy skaner sk\u0142adu produkt\xF3w"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__main-section--divider"
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, "Skanuj zakupy i dbaj o swoje zdrowie"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__download--btn-container"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+    src: _assets_images_googlePlay_png__WEBPACK_IMPORTED_MODULE_6___default.a
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+    src: _assets_images_appStore_png__WEBPACK_IMPORTED_MODULE_5___default.a
+  }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__main-section--content-right"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+    src: _assets_images_phone_header_png__WEBPACK_IMPORTED_MODULE_4___default.a
+  }))))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__how-it-works-section--container"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__how-it-works-section--wrapper"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__section-header__container"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Jak to dzia\u0142a?"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__section-header__divider"
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__how-it-works-section--points-container"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__single-point--container ".concat(activeDesctiption === 0 && "active-description"),
+    onClick: function onClick() {
+      handleActiveDesctiption(0);
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "1")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__single-point--container ".concat(activeDesctiption === 1 && "active-description"),
+    onClick: function onClick() {
+      handleActiveDesctiption(1);
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "2")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__single-point--container ".concat(activeDesctiption === 2 && "active-description"),
+    onClick: function onClick() {
+      handleActiveDesctiption(2);
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "3")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__single-point--container ".concat(activeDesctiption === 3 && "active-description"),
+    onClick: function onClick() {
+      handleActiveDesctiption(3);
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "4")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__single-point--container ".concat(activeDesctiption === 4 && "active-description"),
+    onClick: function onClick() {
+      handleActiveDesctiption(4);
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "5"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__how-it-works-section--description-container"
+  }, activeDesctiption === 0 && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__single-description--container"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "Zeskanuj kod kreskowy")), activeDesctiption === 1 && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__single-description--container"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "W przypadku znalezienia produktu masz dost\u0119p do jego sk\u0142adu")), activeDesctiption === 2 && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__single-description--container"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "Spo\u015Br\xF3d sk\u0142adnik\xF3w widoczne s\u0105 szkodliwe oznaczone kolorem czerwonym, niekorzystne kolorem \u017C\xF3\u0142tym i prozdrowotne zielonym wraz z opisem i \u017Ar\xF3d\u0142em informacji")), activeDesctiption === 3 && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__single-description--container"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "W przypadku nieznalezienia produktu, zeskanuj jego sk\u0142ad i wy\u015Blij do weryfikacji, aby przy kolejnym zeskanowaniu w przysz\u0142o\u015Bci inni u\u017Cytkownicy widzieli jego sk\u0142ad")), activeDesctiption === 4 && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__single-description--container"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "Zbaj o swoje zdrowie. Aplikacja nie wymaga rejestracji i jest w pe\u0142ni darmowa. Zosta\u0142a stworzona przez ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+    href: "https://tech-bulb.com/",
+    target: "_blank"
+  }, "autora"), ", aby poszerza\u0107 jego wiedz\u0119 w tworzeniu oprogramowania i nie ma na celu pozyskiwania korzy\u015Bci maj\u0105tkowych"))))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__download--container"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__download--wrapper"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__section-header__container"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Pobierz aplikacj\u0119 na sw\xF3j telefon"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__section-header__divider"
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__download--btn-container"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+    src: _assets_images_googlePlay_png__WEBPACK_IMPORTED_MODULE_6___default.a
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+    src: _assets_images_appStore_png__WEBPACK_IMPORTED_MODULE_5___default.a
+  })))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__footer--container"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "homepage__footer--wrapper"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "Zdrowy Koszyk 2020"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+    href: "https://tech-bulb.com/",
+    title: "Odwied\u017A mojego bloga",
+    target: "_blank"
+  }, "Created by Szymon Radosz")))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Home);
