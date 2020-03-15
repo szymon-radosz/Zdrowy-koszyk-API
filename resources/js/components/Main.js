@@ -45,7 +45,7 @@ class Main extends Component {
                 Component: Dashboard
             },
             {
-                path: "/login",
+                path: "/login-dashboard",
                 name: "Login",
                 Component: Login
             },
@@ -181,8 +181,8 @@ class Main extends Component {
                                 <Redirect to="dashboard" />
                             ) : (lastUrlSegment === "polityka-prywatnosci" ?
                                 <Redirect to="polityka-prywatnosci" /> : 
-                                lastUrlSegment === "login" ? 
-                                <Redirect to="login" /> : 
+                                lastUrlSegment === "login-dashboard" ? 
+                                <Redirect to="login-dashboard" /> : 
                                 lastUrlSegment === "register-dashboard" ? 
                                 <Redirect to="register-dashboard" /> : 
                                 <Redirect to="/" />

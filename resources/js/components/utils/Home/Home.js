@@ -4,6 +4,7 @@ import logo from "./../../../../assets/images/logo.png"
 import phoneHeader from "./../../../../assets/images/phone-header.png"
 import appStore from "./../../../../assets/images/appStore.png"
 import googlePlay from "./../../../../assets/images/googlePlay.png"
+import favicon from "./../../../../assets/images/favicon.png"
 
 const Home = () => {
     const [intervalId, setIntervalID] = useState(0);
@@ -51,7 +52,7 @@ const Home = () => {
                 <title>Zdrowy Koszyk - darmowy skaner składu produktów</title>
 
                 <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css"/>
-                {/* <link rel="shortcut icon" src="image/ico" href="/images/favicon.png" /> */}
+                <link rel="shortcut icon" src={favicon}/>
 
                 <link rel="stylesheet" href="/css/bootstrap.min.css"/>
                 <link rel="stylesheet" href="/css/style.css"/>
