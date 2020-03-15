@@ -15,6 +15,7 @@ import ProductsToAccept from "./utils/Dashboard/ProductsToAccept/ProductsToAccep
 import Alert from "./utils/Alert/Alert";
 import RegisterAdmin from "./utils/RegisterAdmin/RegisterAdmin"
 import Home from "./utils/Home/Home"
+import PrivacyPolicy from "./utils/PrivacyPolicy/PrivacyPolicy"
 
 class Main extends Component {
 
@@ -62,6 +63,11 @@ class Main extends Component {
                 path: "/products-to-accept",
                 name: "ProductsToAccept",
                 Component: ProductsToAccept
+            },
+            {
+                path: "/polityka-prywatnosci",
+                name: "PrivacyPolicy",
+                Component: PrivacyPolicy
             },
             {
                 path: "/",
@@ -142,6 +148,7 @@ class Main extends Component {
         } = this.state;
 
         const lastUrlSegment = this.getUrlLastSegment();
+        console.log(["lastUrlSegment", lastUrlSegment])
 
         return (
             <MainContext.Provider
@@ -172,7 +179,9 @@ class Main extends Component {
                         <Router history={history}>
                             {userLoggedIn && token ? (
                                 <Redirect to="dashboard" />
-                            ) : (lastUrlSegment === "login" ? 
+                            ) : (lastUrlSegment === "polityka-prywatnosci" ?
+                                <Redirect to="polityka-prywatnosci" /> : 
+                                lastUrlSegment === "login" ? 
                                 <Redirect to="login" /> : 
                                 lastUrlSegment === "register-dashboard" ? 
                                 <Redirect to="register-dashboard" /> : 
