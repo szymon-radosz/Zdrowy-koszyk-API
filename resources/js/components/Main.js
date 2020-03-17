@@ -13,12 +13,12 @@ import history from "./History";
 import Products from "./utils/Dashboard/Products/Products";
 import ProductsToAccept from "./utils/Dashboard/ProductsToAccept/ProductsToAccept";
 import Alert from "./utils/Alert/Alert";
-import RegisterAdmin from "./utils/RegisterAdmin/RegisterAdmin"
-import Home from "./utils/Home/Home"
-import PrivacyPolicy from "./utils/PrivacyPolicy/PrivacyPolicy"
+import RegisterAdmin from "./utils/RegisterAdmin/RegisterAdmin";
+import Home from "./utils/Home/Home";
+import PrivacyPolicy from "./utils/PrivacyPolicy/PrivacyPolicy";
+import SearchProducts from "./utils/SearchProducts/SearchProducts";
 
 class Main extends Component {
-
     constructor(props) {
         super(props);
 
@@ -26,14 +26,22 @@ class Main extends Component {
             userLoggedIn: false,
             showSidebarText: false,
             activeMenuSection: "",
-            // APP_URL: "http://127.0.0.1:8080",
-            // API_URL: "http://127.0.0.1:8080/api/",
-            APP_URL: "http://zdrowy-koszyk.live/",
-            API_URL: "http://zdrowy-koszyk.live/api/",
+            APP_URL: "http://127.0.0.1:8080",
+            API_URL: "http://127.0.0.1:8080/api/",
+            // APP_URL: "http://zdrowy-koszyk.live/",
+            // API_URL: "http://zdrowy-koszyk.live/api/",
             showLoader: false,
             alertMessage: "",
             alertStatus: "",
-            token: ""
+            token: "",
+            allowedPaths: [
+                "wyszukiwarka",
+                "login-dashboard",
+                "register-dashboard",
+                "polityka-prywatnosci"
+            ],
+            allowRedirect: false,
+            redirectedPath: ""
         };
 
         this.history = history;
@@ -65,6 +73,11 @@ class Main extends Component {
                 Component: ProductsToAccept
             },
             {
+                path: "/wyszukiwarka",
+                name: "SearchProducts",
+                Component: SearchProducts
+            },
+            {
                 path: "/polityka-prywatnosci",
                 name: "PrivacyPolicy",
                 Component: PrivacyPolicy
@@ -76,6 +89,16 @@ class Main extends Component {
             }
         ];
     }
+
+    checkAllowedPath = path => {
+        const allowedPaths = this.state.allowedPaths;
+
+        if (allowedPaths.includes(path)) {
+            return <Redirect to={path} />;
+        } else {
+            return <Redirect to="/" />;
+        }
+    };
 
     setToken = token => {
         this.setState({ token });
@@ -98,7 +121,7 @@ class Main extends Component {
         }, 4000);
     };
 
-    handleShowLoader = (status) => {
+    handleShowLoader = status => {
         this.setState({ showLoader: status });
     };
 
@@ -106,12 +129,19 @@ class Main extends Component {
         this.setState({ showSidebarText: !this.state.showSidebarText });
     };
 
-    handlAactiveMenuSection = (text) => {
+    handlAactiveMenuSection = text => {
         this.setState({ activeMenuSection: text });
     };
 
-    handleChangePath = (path, state = {}) => {
-        this.history.push({ pathname: path, state: state });
+    handleChangePath = path => {
+        console.log(path);
+        const allowedPaths = this.state.allowedPaths;
+
+        if (allowedPaths.includes(path)) {
+            this.setState({ allowRedirect: true, redirectedPath: path });
+        } else {
+            this.setState({ allowRedirect: true, redirectedPath: "/" });
+        }
     };
 
     checkTokenExpiration = status => {
@@ -130,9 +160,9 @@ class Main extends Component {
         }
     };
 
-    getUrlLastSegment = () =>{
+    getUrlLastSegment = () => {
         return window.location.pathname.split("/").pop();
-    }
+    };
 
     render() {
         const {
@@ -144,11 +174,13 @@ class Main extends Component {
             showLoader,
             alertMessage,
             alertStatus,
-            token
+            token,
+            allowRedirect,
+            redirectedPath
         } = this.state;
 
         const lastUrlSegment = this.getUrlLastSegment();
-        console.log(["lastUrlSegment", lastUrlSegment])
+        console.log(["lastUrlSegment", lastUrlSegment]);
 
         return (
             <MainContext.Provider
@@ -168,25 +200,27 @@ class Main extends Component {
                     token: token,
                     setToken: this.setToken,
                     handleLogout: this.handleLogout,
-                    checkTokenExpiration: this.checkTokenExpiration
+                    checkTokenExpiration: this.checkTokenExpiration,
+                    checkAllowedPath: this.checkAllowedPath
                 }}
             >
                 {alertMessage && alertStatus && (
                     <Alert message={alertMessage} status={alertStatus} />
                 )}
+
                 <div className="container-sm app__container">
                     <AppComponent>
                         <Router history={history}>
                             {userLoggedIn && token ? (
                                 <Redirect to="dashboard" />
-                            ) : (lastUrlSegment === "polityka-prywatnosci" ?
-                                <Redirect to="polityka-prywatnosci" /> : 
-                                lastUrlSegment === "login-dashboard" ? 
-                                <Redirect to="login-dashboard" /> : 
-                                lastUrlSegment === "register-dashboard" ? 
-                                <Redirect to="register-dashboard" /> : 
-                                <Redirect to="/" />
+                            ) : (
+                                this.checkAllowedPath(lastUrlSegment)
                             )}
+
+                            {allowRedirect && redirectedPath && (
+                                <Redirect to={redirectedPath} />
+                            )}
+
                             <Switch>
                                 {this.routes.map(
                                     ({ path, name, Component }) => {

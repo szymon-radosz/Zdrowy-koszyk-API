@@ -15,5 +15,6 @@ export const MainContext = React.createContext({
     APP_URL: "",
     API_URL: "",
     showLoader: false,
-    token: ""
+    token: "",
+    checkAllowedPath: (path) => {}
 });

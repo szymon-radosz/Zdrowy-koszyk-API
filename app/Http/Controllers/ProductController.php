@@ -113,9 +113,7 @@ class ProductController extends Controller
                                 //var_dump($singleWord);
                                 $query->where('keywords', 'like', '%' . $singleWord . '%', 'or');
                             }
-                           
                         }
-                       
                     }
                 })
                 ->get();
@@ -124,6 +122,21 @@ class ProductController extends Controller
             return response()->json(['status' => 'OK', 'result' => $product]);
         } catch (\Exception $e) {
             return response()->json(['status' => 'ERR', 'result' => $e->getMessage()]);
+        }
+    }
+
+    public function findBySearchInput(Request $request)
+    {
+        try {
+            $querySearch = $request->querySearch ? $request->querySearch : "";
+
+            $products = Product::where('barcode', 'like', '%' . $querySearch . '%')
+                                    ->orWhere('name', 'like', '%' . $querySearch . '%')
+                                    ->paginate(15);
+
+            return response()->json(['status' => 'OK', 'result' => $products]);
+        } catch (\Exception $e) {
+            return response()->json(['status' => 'ERR', 'result' => 'Problem z otrzymaniem listy']);
         }
     }
 }
