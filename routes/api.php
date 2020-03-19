@@ -13,7 +13,7 @@ Route::post('login', 'UserController@authenticate');
 Route::post('register', 'UserController@register');
 Route::post('checkIfEmailExists', 'UserController@checkIfEmailExists');
 
-Route::get('product/find/{barcode}/{deviceId}/{deviceBrand}', array('middleware' => 'cors', 'uses' => 'ProductController@find'));
+Route::get('product/find/{barcode}/{deviceId?}/{deviceBrand?}', array('middleware' => 'cors', 'uses' => 'ProductController@find'));
 Route::get('product/search/{querySearch}', array('middleware' => 'cors', 'uses' => 'ProductController@findBySearchInput'));
 
 Route::group(['middleware' => ['jwt.verify']], function () {

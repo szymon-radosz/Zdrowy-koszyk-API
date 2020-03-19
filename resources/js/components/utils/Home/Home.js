@@ -48,7 +48,7 @@ const Home = () => {
 
             <div className="page__main-section--container">
                 <div className="page__main-section--wrapper">
-                    <Menu />
+                    <Menu forceSearchPath={false} />
 
                     <div className="page__main-section--content">
                         <div className="page__main-section--content-left">
@@ -59,8 +59,18 @@ const Home = () => {
 
                             <h3>Skanuj zakupy i dbaj o swoje zdrowie</h3>
                             <div className="homepage__download--btn-container">
-                                <img src={googlePlay} />
-                                <img src={appStore} />
+                                <a
+                                    href="https://play.google.com/store/apps/details?id=com.zdrowykoszykapp"
+                                    target="_blank"
+                                    title="Pobierz z Google Play"
+                                >
+                                    <img
+                                        className="shop__icon"
+                                        src={googlePlay}
+                                    />
+                                </a>
+
+                                <img className="shop__icon" src={appStore} />
                             </div>
                         </div>
                         <div className="page__main-section--content-right">
@@ -185,8 +195,14 @@ const Home = () => {
                         <div className="homepage__section-header__divider"></div>
                     </div>
                     <div className="homepage__download--btn-container">
-                        <img src={googlePlay} />
-                        <img src={appStore} />
+                        <a
+                            href="https://play.google.com/store/apps/details?id=com.zdrowykoszykapp"
+                            target="_blank"
+                            title="Pobierz z Google Play"
+                        >
+                            <img className="shop__icon" src={googlePlay} />
+                        </a>
+                        <img className="shop__icon" src={appStore} />
                     </div>
                 </div>
             </div>

@@ -6,7 +6,7 @@ import axios from "axios";
 import ProductsList from "./ProductsList/ProductsList";
 import AddProduct from "./AddProduct/AddProduct";
 
-class Products extends Component{
+class Products extends Component {
     constructor(props) {
         super(props);
 
@@ -16,8 +16,7 @@ class Products extends Component{
             path: "",
             currentPage: 0,
             count: 0,
-            from: 0,
-
+            from: 0
         };
     }
 
@@ -33,19 +32,18 @@ class Products extends Component{
                     })
                     .then(response => {
                         const { data } = response;
-                        console.log(data)
-                        if(data.status === "OK"){
+                        //console.log(data)
+                        if (data.status === "OK") {
                             this.setState({
                                 products: data.result.products.data,
-                                lastPageProducts: data.result.products.last_page,
+                                lastPageProducts:
+                                    data.result.products.last_page,
                                 currentPage: 0,
                                 path: data.result.products.path,
                                 count: data.result.products.total,
-                                from: data.result.products.from,
-
+                                from: data.result.products.from
                             });
                         }
-                            
 
                         resolve(response);
                     })
@@ -53,7 +51,7 @@ class Products extends Component{
                         this.context.checkTokenExpiration(err.response.status);
                     });
             } catch (err) {
-                console.log(err);
+                //console.log(err);
                 reject(err);
             } finally {
                 this.context.handleShowLoader(false);
@@ -62,34 +60,38 @@ class Products extends Component{
     };
 
     handlePageClick = (pageData, searchData) => {
-            return new Promise(async (resolve, reject) => {
-                axios
-                .get(`${this.context.API_URL}get-products?page=${pageData.selected + 1}`, {
-                    headers: {
-                        Authorization: `Bearer ${this.context.token}`
+        return new Promise(async (resolve, reject) => {
+            axios
+                .get(
+                    `${
+                        this.context.API_URL
+                    }get-products?page=${pageData.selected + 1}`,
+                    {
+                        headers: {
+                            Authorization: `Bearer ${this.context.token}`
+                        }
                     }
-                })
-                    .then(response => {
-                        const { data } = response;
-                        console.log(data)
+                )
+                .then(response => {
+                    const { data } = response;
+                    //console.log(data)
 
-                        this.setState({
-                            products: []
-                        })
-
-                        this.setState({
-                            products: data.result.products.data,
-                            currentPage: pageData.selected,
-                            from: data.result.products.from
-                        })
-                    })
-                    .catch(function (error) {
-                        console.log(error);
-                        return reject(error);
+                    this.setState({
+                        products: []
                     });
-            });
-    }
 
+                    this.setState({
+                        products: data.result.products.data,
+                        currentPage: pageData.selected,
+                        from: data.result.products.from
+                    });
+                })
+                .catch(function(error) {
+                    //console.log(error);
+                    return reject(error);
+                });
+        });
+    };
 
     handleProductSave = (id, name, barcode, details) => {
         this.context.handleShowLoader(true);
@@ -161,11 +163,8 @@ class Products extends Component{
                         this.context.checkTokenExpiration(err.response.status);
                     });
             } catch (err) {
-                console.log(err);
-                this.context.handleShowAlert(
-                    "Cannot remove product",
-                    "danger"
-                );
+                //console.log(err);
+                this.context.handleShowAlert("Cannot remove product", "danger");
                 reject(err);
             } finally {
                 this.context.handleShowLoader(false);
@@ -175,10 +174,7 @@ class Products extends Component{
 
     handleAddNewProduct = name => {
         if (!name) {
-            this.context.handleShowAlert(
-                "Please, provide name",
-                "danger"
-            );
+            this.context.handleShowAlert("Please, provide name", "danger");
         } else {
             this.context.handleShowLoader(true);
             return new Promise(async (resolve, reject) => {
@@ -210,7 +206,7 @@ class Products extends Component{
                             );
                         });
                 } catch (err) {
-                    console.log(err);
+                    //console.log(err);
                     this.context.handleShowAlert(
                         "Cannot added new product",
                         "danger"
@@ -237,9 +233,7 @@ class Products extends Component{
             <DashboardContainer>
                 <Header text="Products" />
 
-                <AddProduct
-                    handleAddNewProduct={this.handleAddNewProduct}
-                />
+                <AddProduct handleAddNewProduct={this.handleAddNewProduct} />
 
                 <ProductsList
                     products={products}
@@ -249,7 +243,6 @@ class Products extends Component{
                     currentPage={currentPage}
                     lastPageProducts={lastPageProducts}
                     from={from}
-
                 />
             </DashboardContainer>
         );

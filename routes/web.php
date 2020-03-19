@@ -5,6 +5,6 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
-Route::get('{slug}', function () {
+Route::get('/{path?}', function () {
     return view('dashboard');
-});
+})->where('path', '.*');

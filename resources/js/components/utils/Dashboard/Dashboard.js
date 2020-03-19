@@ -40,7 +40,7 @@ class Dashboard extends Component {
                         this.context.checkTokenExpiration(err.response.status);
                     });
             } catch (err) {
-                console.log(err);
+                //console.log(err);
             } finally {
                 this.context.handleShowLoader(false);
             }
@@ -72,7 +72,7 @@ class Dashboard extends Component {
                         this.context.checkTokenExpiration(err.response.status);
                     });
             } catch (err) {
-                console.log(err);
+                //console.log(err);
             } finally {
                 this.context.handleShowLoader(false);
             }
@@ -104,7 +104,7 @@ class Dashboard extends Component {
                         this.context.checkTokenExpiration(err.response.status);
                     });
             } catch (err) {
-                console.log(err);
+                //console.log(err);
             } finally {
                 this.context.handleShowLoader(false);
             }

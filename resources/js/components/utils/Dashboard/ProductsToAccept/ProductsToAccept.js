@@ -5,7 +5,7 @@ import Header from "./../utils/Header";
 import axios from "axios";
 import ProductsList from "./ProductsList/ProductsList";
 
-class ProductsToAccept extends Component{
+class ProductsToAccept extends Component {
     constructor(props) {
         super(props);
 
@@ -15,8 +15,7 @@ class ProductsToAccept extends Component{
             path: "",
             currentPage: 0,
             count: 0,
-            from: 0,
-
+            from: 0
         };
     }
 
@@ -32,19 +31,18 @@ class ProductsToAccept extends Component{
                     })
                     .then(response => {
                         const { data } = response;
-                        console.log(data)
-                        if(data.status === "OK"){
+                        //console.log(data)
+                        if (data.status === "OK") {
                             this.setState({
                                 products: data.result.products.data,
-                                lastPageProducts: data.result.products.last_page,
+                                lastPageProducts:
+                                    data.result.products.last_page,
                                 currentPage: 0,
                                 path: data.result.products.path,
                                 count: data.result.products.total,
-                                from: data.result.products.from,
-
+                                from: data.result.products.from
                             });
                         }
-                            
 
                         resolve(response);
                     })
@@ -52,7 +50,7 @@ class ProductsToAccept extends Component{
                         this.context.checkTokenExpiration(err.response.status);
                     });
             } catch (err) {
-                console.log(err);
+                //console.log(err);
                 reject(err);
             } finally {
                 this.context.handleShowLoader(false);
@@ -61,34 +59,38 @@ class ProductsToAccept extends Component{
     };
 
     handlePageClick = (pageData, searchData) => {
-            return new Promise(async (resolve, reject) => {
-                axios
-                .get(`${this.context.API_URL}products-to-accept/get?page=${pageData.selected + 1}`, {
-                    headers: {
-                        Authorization: `Bearer ${this.context.token}`
+        return new Promise(async (resolve, reject) => {
+            axios
+                .get(
+                    `${
+                        this.context.API_URL
+                    }products-to-accept/get?page=${pageData.selected + 1}`,
+                    {
+                        headers: {
+                            Authorization: `Bearer ${this.context.token}`
+                        }
                     }
-                })
-                    .then(response => {
-                        const { data } = response;
-                        console.log(data)
+                )
+                .then(response => {
+                    const { data } = response;
+                    //console.log(data)
 
-                        this.setState({
-                            products: []
-                        })
-
-                        this.setState({
-                            products: data.result.products.data,
-                            currentPage: pageData.selected,
-                            from: data.result.products.from
-                        })
-                    })
-                    .catch(function (error) {
-                        console.log(error);
-                        return reject(error);
+                    this.setState({
+                        products: []
                     });
-            });
-    }
 
+                    this.setState({
+                        products: data.result.products.data,
+                        currentPage: pageData.selected,
+                        from: data.result.products.from
+                    });
+                })
+                .catch(function(error) {
+                    //console.log(error);
+                    return reject(error);
+                });
+        });
+    };
 
     handleProductSave = (id, name, barcode, details) => {
         this.context.handleShowLoader(true);
@@ -102,12 +104,16 @@ class ProductsToAccept extends Component{
                 });
 
                 axios
-                    .post(`${this.context.API_URL}product-to-accept/update`, data, {
-                        headers: {
-                            "Content-Type": "application/json",
-                            Authorization: `Bearer ${this.context.token}`
+                    .post(
+                        `${this.context.API_URL}product-to-accept/update`,
+                        data,
+                        {
+                            headers: {
+                                "Content-Type": "application/json",
+                                Authorization: `Bearer ${this.context.token}`
+                            }
                         }
-                    })
+                    )
                     .then(response => {
                         this.context.handleShowAlert(
                             "Successfully updated product",
@@ -154,7 +160,6 @@ class ProductsToAccept extends Component{
                     currentPage={currentPage}
                     lastPageProducts={lastPageProducts}
                     from={from}
-
                 />
             </DashboardContainer>
         );

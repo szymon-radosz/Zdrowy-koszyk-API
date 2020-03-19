@@ -17,6 +17,7 @@ import RegisterAdmin from "./utils/RegisterAdmin/RegisterAdmin";
 import Home from "./utils/Home/Home";
 import PrivacyPolicy from "./utils/PrivacyPolicy/PrivacyPolicy";
 import SearchProducts from "./utils/SearchProducts/SearchProducts";
+import ProductDetails from "./utils/ProductDetails/ProductDetails";
 
 class Main extends Component {
     constructor(props) {
@@ -38,7 +39,8 @@ class Main extends Component {
                 "wyszukiwarka",
                 "login-dashboard",
                 "register-dashboard",
-                "polityka-prywatnosci"
+                "polityka-prywatnosci",
+                "produkt"
             ],
             allowRedirect: false,
             redirectedPath: ""
@@ -78,6 +80,11 @@ class Main extends Component {
                 Component: SearchProducts
             },
             {
+                path: "/produkt/:barcode",
+                name: "ProductDetails",
+                Component: ProductDetails
+            },
+            {
                 path: "/polityka-prywatnosci",
                 name: "PrivacyPolicy",
                 Component: PrivacyPolicy
@@ -93,7 +100,8 @@ class Main extends Component {
     checkAllowedPath = path => {
         const allowedPaths = this.state.allowedPaths;
 
-        if (allowedPaths.includes(path)) {
+        if (allowedPaths.includes(path.split("/")[1])) {
+            //console.log(["path", path, path.split("/")[1]]);
             return <Redirect to={path} />;
         } else {
             return <Redirect to="/" />;
@@ -134,10 +142,10 @@ class Main extends Component {
     };
 
     handleChangePath = path => {
-        console.log(path);
+        //console.log(["chandleChangePath", path]);
         const allowedPaths = this.state.allowedPaths;
 
-        if (allowedPaths.includes(path)) {
+        if (allowedPaths.includes(path.split("/")[0])) {
             this.setState({ allowRedirect: true, redirectedPath: path });
         } else {
             this.setState({ allowRedirect: true, redirectedPath: "/" });
@@ -160,8 +168,8 @@ class Main extends Component {
         }
     };
 
-    getUrlLastSegment = () => {
-        return window.location.pathname.split("/").pop();
+    getUrlPathname = () => {
+        return window.location.pathname;
     };
 
     render() {
@@ -179,8 +187,8 @@ class Main extends Component {
             redirectedPath
         } = this.state;
 
-        const lastUrlSegment = this.getUrlLastSegment();
-        console.log(["lastUrlSegment", lastUrlSegment]);
+        const lastUrlSegment = this.getUrlPathname();
+        //console.log(["lastUrlSegment", lastUrlSegment]);
 
         return (
             <MainContext.Provider
