@@ -145,10 +145,14 @@ class Main extends Component {
         //console.log(["chandleChangePath", path]);
         const allowedPaths = this.state.allowedPaths;
 
-        if (allowedPaths.includes(path.split("/")[0])) {
-            this.setState({ allowRedirect: true, redirectedPath: path });
+        if (!userLoggedIn) {
+            if (allowedPaths.includes(path.split("/")[0])) {
+                this.setState({ allowRedirect: true, redirectedPath: path });
+            } else {
+                this.setState({ allowRedirect: true, redirectedPath: "/" });
+            }
         } else {
-            this.setState({ allowRedirect: true, redirectedPath: "/" });
+            this.history.push({ pathname: path, state: {} });
         }
     };
 
