@@ -143,7 +143,7 @@ class Main extends Component {
 
     handleChangePath = path => {
         //console.log(["chandleChangePath", path]);
-        const allowedPaths = this.state.allowedPaths;
+        const { allowedPaths, userLoggedIn } = this.state;
 
         if (!userLoggedIn) {
             if (allowedPaths.includes(path.split("/")[0])) {
