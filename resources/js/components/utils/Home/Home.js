@@ -9,7 +9,7 @@ import Menu from "./../../global/Menu";
 
 const Home = () => {
     const [intervalId, setIntervalID] = useState(0);
-    const [activeDesctiption, setActiveDescription] = useState(0);
+    const [activeDesctiption, setActiveDescription] = useState(1);
     const [activeCustomQueue, setActiveCustomQueue] = useState(false);
 
     const handleActiveDesctiption = customClickParameter => {
@@ -27,14 +27,14 @@ const Home = () => {
         setIntervalID(
             setInterval(() => {
                 setActiveCustomQueue(false);
-                if (active === 5) {
-                    setActiveDescription(0);
-                    active = 0;
+                if (active === 6) {
+                    setActiveDescription(1);
+                    active = 1;
                 } else {
                     setActiveDescription(active);
                     active += 1;
                 }
-            }, 8000)
+            }, 5000)
         );
     };
 
@@ -46,10 +46,10 @@ const Home = () => {
         <>
             <Head title="Zdrowy Koszyk - darmowy skaner składu produktów" />
 
+            <Menu forceSearchPath={false} />
+
             <div className="page__main-section--container">
                 <div className="page__main-section--wrapper">
-                    <Menu forceSearchPath={false} />
-
                     <div className="page__main-section--content">
                         <div className="page__main-section--content-left">
                             <h1>Zdrowy Koszyk</h1>
@@ -88,21 +88,12 @@ const Home = () => {
                     <div className="homepage__how-it-works-section--points-container">
                         <div
                             className={`homepage__single-point--container ${activeDesctiption ===
-                                0 && "active-description"}`}
-                            onClick={() => {
-                                handleActiveDesctiption(0);
-                            }}
-                        >
-                            <p>1</p>
-                        </div>
-                        <div
-                            className={`homepage__single-point--container ${activeDesctiption ===
                                 1 && "active-description"}`}
                             onClick={() => {
                                 handleActiveDesctiption(1);
                             }}
                         >
-                            <p>2</p>
+                            <p>1</p>
                         </div>
                         <div
                             className={`homepage__single-point--container ${activeDesctiption ===
@@ -111,7 +102,7 @@ const Home = () => {
                                 handleActiveDesctiption(2);
                             }}
                         >
-                            <p>3</p>
+                            <p>2</p>
                         </div>
                         <div
                             className={`homepage__single-point--container ${activeDesctiption ===
@@ -120,7 +111,7 @@ const Home = () => {
                                 handleActiveDesctiption(3);
                             }}
                         >
-                            <p>4</p>
+                            <p>3</p>
                         </div>
                         <div
                             className={`homepage__single-point--container ${activeDesctiption ===
@@ -129,16 +120,25 @@ const Home = () => {
                                 handleActiveDesctiption(4);
                             }}
                         >
+                            <p>4</p>
+                        </div>
+                        <div
+                            className={`homepage__single-point--container ${activeDesctiption ===
+                                5 && "active-description"}`}
+                            onClick={() => {
+                                handleActiveDesctiption(5);
+                            }}
+                        >
                             <p>5</p>
                         </div>
                     </div>
                     <div className="homepage__how-it-works-section--description-container">
-                        {activeDesctiption === 0 && (
+                        {activeDesctiption === 1 && (
                             <div className="homepage__single-description--container">
                                 <p>Zeskanuj kod kreskowy</p>
                             </div>
                         )}
-                        {activeDesctiption === 1 && (
+                        {activeDesctiption === 2 && (
                             <div className="homepage__single-description--container">
                                 <p>
                                     W przypadku znalezienia produktu masz dostęp
@@ -146,7 +146,7 @@ const Home = () => {
                                 </p>
                             </div>
                         )}
-                        {activeDesctiption === 2 && (
+                        {activeDesctiption === 3 && (
                             <div className="homepage__single-description--container">
                                 <p>
                                     Spośród składników widoczne są szkodliwe
@@ -156,7 +156,7 @@ const Home = () => {
                                 </p>
                             </div>
                         )}
-                        {activeDesctiption === 3 && (
+                        {activeDesctiption === 4 && (
                             <div className="homepage__single-description--container">
                                 <p>
                                     W przypadku nieznalezienia produktu,
@@ -166,7 +166,7 @@ const Home = () => {
                                 </p>
                             </div>
                         )}
-                        {activeDesctiption === 4 && (
+                        {activeDesctiption === 5 && (
                             <div className="homepage__single-description--container">
                                 <p>
                                     Zbaj o swoje zdrowie. Aplikacja nie wymaga

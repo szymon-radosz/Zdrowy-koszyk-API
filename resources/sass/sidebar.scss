@@ -1,5 +1,5 @@
 .sidebar {
-    background: $blue;
+    background: $green;
     //border-right: 2px solid $borderGray;
     //border-top: 2px solid $borderGray;
 
@@ -9,7 +9,7 @@
         .sidebar__item {
             background: #fff;
             .sidebar__item--wrapper {
-                background: $blue;
+                background: $green;
                 position: relative;
                 padding: 8px 15px;
                 display: flex;
@@ -35,7 +35,7 @@
                 top: 0;
                 left: 0;
                 width: 3px;
-                background-color: $blue;
+                background-color: $green;
                 height: 100%;
             }
         }

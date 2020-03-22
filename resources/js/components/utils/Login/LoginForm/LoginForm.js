@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import logoSquare from "./../../../../../assets/images/logo-square.png";
 
 const LoginForm = ({ onLoginSubmit }) => {
     const [email, setEmail] = useState("");
@@ -10,7 +11,7 @@ const LoginForm = ({ onLoginSubmit }) => {
             onSubmit={() => onLoginSubmit(email, password)}
             data-testid="form"
         >
-            <img src="/images/logo-sq.png" data-testid="logo" />
+            <img src={logoSquare} data-testid="logo" />
             <div className="form-group">
                 <input
                     type="email"
@@ -29,7 +30,7 @@ const LoginForm = ({ onLoginSubmit }) => {
             </div>
             <button
                 type="submit"
-                onClick={(e) => onLoginSubmit(e, email, password)}
+                onClick={e => onLoginSubmit(e, email, password)}
                 className="btn blue-btn"
                 data-testid="button"
             >

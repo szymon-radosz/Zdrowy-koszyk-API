@@ -112,10 +112,10 @@ class SearchProducts extends Component {
             <div className="search-page__container">
                 <Head title="Zdrowy Koszyk - Wyszukiwarka - darmowy skaner składu produktów" />
 
+                <Menu />
+
                 <div className="page__main-section--container">
                     <div className="page__main-section--wrapper">
-                        <Menu />
-
                         <div className="search-products__form--container">
                             <h1>Wyszukiwarka produktów</h1>
                             <input

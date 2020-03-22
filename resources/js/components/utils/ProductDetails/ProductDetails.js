@@ -52,10 +52,10 @@ const ProductDetails = () => {
         <div className="search-page__container">
             <Head title="Zdrowy Koszyk - Szczegóły produktu - darmowy skaner składu produktów" />
 
+            <Menu />
+
             <div className="page__main-section--container">
                 <div className="page__main-section--wrapper">
-                    <Menu />
-
                     <div className="search-products__form--container">
                         <h1>{name && name}</h1>
                     </div>

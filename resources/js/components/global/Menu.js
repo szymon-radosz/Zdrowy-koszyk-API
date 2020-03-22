@@ -8,23 +8,22 @@ const Menu = () => {
 
     return (
         <div className="page__main-section--top-panel">
-            <div className="top-panel__left--container">
-                <img
-                    src={logo}
-                    onClick={() => {
-                        context.handleChangePath("");
-                    }}
-                />
+            <div className="top-panel__wrapper">
+                <div className="top-panel__left--container">
+                    <img
+                        src={logo}
+                        onClick={() => {
+                            context.handleChangePath("");
+                        }}
+                    />
+                </div>
+                <MenuBurger right>
+                    <p onClick={() => context.handleChangePath("")}>START</p>
+                    <p onClick={() => context.handleChangePath("wyszukiwarka")}>
+                        WYSZUKIWARKA
+                    </p>
+                </MenuBurger>
             </div>
-            {/* <div className="top-panel__right--container">
-                <p>Wyszukiwarka produktów</p>
-            </div> */}
-            <MenuBurger right>
-                <p onClick={() => context.handleChangePath("")}>HOME</p>
-                <p onClick={() => context.handleChangePath("wyszukiwarka")}>
-                    WYSZUKIWARKA
-                </p>
-            </MenuBurger>
         </div>
     );
 };

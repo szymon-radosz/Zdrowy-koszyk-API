@@ -36,7 +36,7 @@ const SingleIngredient = singleIngredient => {
                             <span className="search-page__single-list-item--red">
                                 szkodliwy
                             </span>
-                        ) : singleIngredient.ingredient.type === "not bad" ? (
+                        ) : singleIngredient.ingredient.type === "not good" ? (
                             <span className="search-page__single-list-item--yellow">
                                 niekorzystny
                             </span>

@@ -1,45 +1,24 @@
-.page__main-section--container{
+.page__main-section--container {
     background-color: #f4f9f4;
 
-    .page__main-section--wrapper{
+    .page__main-section--wrapper {
         max-width: 950px;
         margin: 0 auto;
         width: 90%;
-    
-        h1, h2, h3, p{
+
+        h1,
+        h2,
+        h3,
+        p {
             color: "#333";
         }
-        .page__main-section--top-panel{
-            .top-panel__left--container{
-                img{
-                    max-width: 130px;
-                    cursor: pointer;
-                }
-                img:hover{
-                    opacity: 0.8;
-                }
-            }
-            .top-panel__right--container{
-                p{
-                    text-transform: uppercase;
-                    color: #333;
-                    font-weight: 600;
-                    cursor: pointer;
-                    opacity: 0.8;
-                    transition: 0.3s;
-                }
-                p:hover{
-                    opacity: 1;
-                    text-decoration: underline;
-                }
-            }
-        }
-        .page__main-section--content{
+
+        .page__main-section--content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        .page__main-section--divider{
+        .page__main-section--divider {
             width: 10%;
             max-width: 60px;
             height: 3px;
@@ -47,22 +26,61 @@
         }
     }
 }
-.homepage__download--btn-container{
+.page__main-section--top-panel {
+    margin: 0 auto;
+    position: fixed;
+    padding: 13px 0;
+    left: 0;
+    right: 0;
+    background-color: #f4f9f4;
+
+    .top-panel__wrapper {
+        width: 90%;
+        max-width: 950px;
+        margin: 0 auto;
+        position: relative;
+
+        .top-panel__left--container {
+            img {
+                max-width: 130px;
+                cursor: pointer;
+            }
+            img:hover {
+                opacity: 0.8;
+            }
+        }
+        .top-panel__right--container {
+            p {
+                text-transform: uppercase;
+                color: #333;
+                font-weight: 600;
+                cursor: pointer;
+                opacity: 0.8;
+                transition: 0.3s;
+            }
+            p:hover {
+                opacity: 1;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+.homepage__download--btn-container {
     display: flex;
     justify-content: flex-start;
 
-    img{
+    img {
         margin-right: 10px;
     }
 }
-.homepage__section-header__container{
+.homepage__section-header__container {
     text-align: center;
 
-    h4{
+    h4 {
         font-weight: 600;
         text-transform: uppercase;
     }
-    .homepage__section-header__divider{
+    .homepage__section-header__divider {
         width: 10%;
         height: 3px;
         background-color: #333;
@@ -70,19 +88,19 @@
         max-width: 60px;
     }
 }
-.homepage__how-it-works-section--container{
-    .homepage__how-it-works-section--wrapper{
+.homepage__how-it-works-section--container {
+    .homepage__how-it-works-section--wrapper {
         max-width: 950px;
         margin: 0 auto;
         width: 90%;
 
-        .homepage__how-it-works-section--points-container{
+        .homepage__how-it-works-section--points-container {
             display: flex;
             justify-content: space-between;
             max-width: 400px;
             margin: 0 auto;
 
-            .homepage__single-point--container{
+            .homepage__single-point--container {
                 cursor: pointer;
                 width: 50px;
                 height: 50px;
@@ -92,177 +110,189 @@
                 border-radius: 50%;
                 border: 3px solid #5c8d89;
 
-                p{
+                p {
                     font-size: 20px;
                     line-height: 43px;
                     margin: 0;
-                    color: #333
+                    color: #333;
                 }
             }
-            .active-description{
+            .active-description {
                 background-color: #5c8d89;
 
-                p{
-                    color: #fff
+                p {
+                    color: #fff;
                 }
             }
         }
     }
 }
-.homepage__how-it-works-section--description-container{
+.homepage__how-it-works-section--description-container {
     text-align: center;
     font-weight: 400;
     color: #333;
 
-    p{
+    p {
         max-width: 700px;
         margin: 0 auto;
     }
-    a{
+    a {
         color: #333;
         font-weight: 600;
         text-decoration: underline;
         transition: 0.3s;
     }
-    a:hover{
+    a:hover {
         color: rgb(116, 116, 116);
     }
 }
-.homepage__download--container{
+.homepage__download--container {
     background-color: #f4f9f4;
     padding-bottom: 50px;
     margin-top: 50px;
 
-    .homepage__download--wrapper{
+    .homepage__download--wrapper {
         max-width: 950px;
         margin: 0 auto;
         width: 90%;
         text-align: center;
 
-        .homepage__download--btn-container{
+        .homepage__download--btn-container {
             justify-content: center;
         }
     }
 }
-.homepage__footer--container{
-    .homepage__footer--wrapper{
+.homepage__footer--container {
+    background-color: #5c8d89;
+    .homepage__footer--wrapper {
         display: flex;
         justify-content: space-between;
-        padding: 10px;
-        background-color: #5c8d89;
+        padding: 10px 0;
+        max-width: 950px;
+        width: 90%;
         color: #fff;
         font-size: 14px;
+        margin: 0 auto;
 
-        p{
+        p {
             margin: 0;
         }
-        a{
+        a {
             color: #fff;
             font-weight: 600;
             text-decoration: underline;
             transition: 0.3s;
         }
-        a:hover{
+        a:hover {
             color: rgb(228, 228, 228);
         }
     }
 }
 
 @media screen and (max-width: 480px) {
-    .page__main-section--top-panel{
-        margin-top: 20px;
+    .homepage__footer--wrapper p {
+        font-size: 11px;
+    }
+    .page__main-section--top-panel {
         text-align: center;
     }
-    .page__main-section--wrapper{
-        .page__main-section--content{
+    .page__main-section--container {
+        margin-top: 70px;
+    }
+    .page__main-section--wrapper {
+        .page__main-section--content {
             display: block !important;
 
-            .page__main-section--content-left{
-                padding: 50px 0;
+            .page__main-section--content-left {
+                padding: 35px 0 50px 0;
                 text-align: center;
 
-                h1{
-                    font-size: 28px;
+                h1 {
+                    font-size: 28px !important;
                     font-weight: 600;
                 }
-                h2{
-                    font-size: 22px;
+                h2 {
+                    font-size: 18px;
                 }
-                .page__main-section--divider{
+                .page__main-section--divider {
                     margin: 10px auto 15px auto;
                 }
-                h3{
-                    font-size: 16px;
+                h3 {
+                    font-size: 14px;
                 }
-                .homepage__download--btn-container{
+                .homepage__download--btn-container {
                     justify-content: center;
                 }
             }
-            .page__main-section--content-right{
+            .page__main-section--content-right {
                 text-align: center;
-                img{
+                img {
                     max-width: 250px;
                     padding: 0 0 50px 0;
                 }
             }
         }
     }
-    .homepage__download--btn-container{
-        img{
+    .homepage__download--btn-container {
+        img {
             max-width: 110px;
         }
     }
-    .homepage__section-header__container{
+    .homepage__section-header__container {
         margin: 50px 0 40px 0;
 
-        h4{
-            font-size: 16px;  
+        h4 {
+            font-size: 16px;
         }
     }
-    .homepage__how-it-works-section--description-container{
-        p{
+    .homepage__how-it-works-section--description-container {
+        p {
             font-size: 14px;
             padding-top: 30px;
+            line-height: 24px;
         }
     }
 }
 
 @media screen and (min-width: 481px) and (max-width: 980px) {
-    .page__main-section--wrapper{
-        h1{
+    .page__main-section--container {
+        margin-top: 70px;
+    }
+    .page__main-section--wrapper {
+        h1 {
             font-size: 32px;
             font-weight: 600;
         }
-        h2{
+        h2 {
             font-size: 24px;
         }
-        .page__main-section--divider{
+        .page__main-section--divider {
             margin-bottom: 10px;
         }
-        h3{
+        h3 {
             font-size: 18px;
         }
-        .page__main-section--content-right{
-            img{
+        .page__main-section--content-right {
+            img {
                 max-width: 250px;
                 padding: 20px 0 50px 0;
             }
         }
     }
-    .homepage__download--btn-container{
-        img{
+    .homepage__download--btn-container {
+        img {
             max-width: 110px;
         }
     }
-    .homepage__section-header__container{
+    .homepage__section-header__container {
         margin: 50px 0 40px 0;
 
-        h4{
-            font-size: 18px;  
+        h4 {
+            font-size: 18px;
         }
     }
-    .homepage__how-it-works-section--description-container{
-        p{
+    .homepage__how-it-works-section--description-container {
+        p {
             font-size: 14px;
             padding-top: 30px;
         }
@@ -270,50 +300,52 @@
 }
 
 @media screen and (min-width: 981px) {
-    .page__main-section--wrapper{
-        h1{
+    .page__main-section--container {
+        margin-top: 70px;
+    }
+    .page__main-section--wrapper {
+        h1 {
             font-size: 36px;
             font-weight: 600;
         }
-        h2{
+        h2 {
             font-size: 26px;
         }
-        .page__main-section--divider{
+        .page__main-section--divider {
             margin-bottom: 10px;
         }
-        h3{
+        h3 {
             font-size: 20px;
         }
-        .page__main-section--content-right{
-            img{
+        .page__main-section--content-right {
+            img {
                 max-height: 92vh;
                 padding: 20px 0 50px 0;
             }
         }
     }
-    .homepage__download--btn-container{
-        img{
+    .homepage__download--btn-container {
+        img {
             max-width: 120px;
         }
     }
-    .homepage__section-header__container{
+    .homepage__section-header__container {
         margin: 50px 0 40px 0;
 
-        h4{
-            font-size: 20px;  
+        h4 {
+            font-size: 20px;
         }
     }
-    .homepage__how-it-works-section--description-container{
-        p{
+    .homepage__how-it-works-section--description-container {
+        p {
             font-size: 16px;
             padding-top: 30px;
         }
     }
 }
 
-@media screen and (min-width: 481px)  {
-    .page__main-section--top-panel{
-        margin-top: 20px;
+@media screen and (min-width: 481px) {
+    .page__main-section--top-panel {
         display: flex;
         justify-content: space-between;
     }

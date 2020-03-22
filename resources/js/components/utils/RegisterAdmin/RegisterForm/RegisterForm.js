@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import logoSquare from "./../../../../../assets/images/logo-square.png";
+
 const RegisterForm = ({ onRegisterSubmit }) => {
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
@@ -8,13 +10,13 @@ const RegisterForm = ({ onRegisterSubmit }) => {
     return (
         <form
             className="login-form"
-            onSubmit={(e) => {
+            onSubmit={e => {
                 e.preventDefault();
-                onRegisterSubmit(name, email, password)
+                onRegisterSubmit(name, email, password);
             }}
             data-testid="form"
         >
-            <img src="/images/logo-sq.png" data-testid="logo" />
+            <img src={logoSquare} data-testid="logo" />
             <div className="form-group">
                 <input
                     type="text"
