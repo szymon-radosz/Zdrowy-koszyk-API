@@ -2,7 +2,7 @@ import React from "react";
 
 const DashboardInfoRect = ({ icon, headerText, number }) => {
     return (
-        <div className="col-sm-3">
+        <div className="col-sm-4">
             <div className="dashboard-info-rect__container">
                 <div className="dashboard-info-rect__header">
                     <div className="dashboard-info-rect__icon-container">

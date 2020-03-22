@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import { MainContext } from "./../../MainContext";
+import gridIcon from "./../../../../assets/images/grid.png";
+import logoutIcon from "./../../../../assets/images/logout.png";
 
 const TopBar = () => {
     const context = useContext(MainContext);
@@ -16,7 +18,7 @@ const TopBar = () => {
             >
                 <img
                     className="menu-icon"
-                    src="/images/menu.png"
+                    src={gridIcon}
                     alt="Icon made by Google from www.flaticon.com"
                 />
             </a>
@@ -45,7 +47,7 @@ const TopBar = () => {
                         >
                             <img
                                 className="logout-icon"
-                                src="/images/logout.png"
+                                src={logoutIcon}
                                 alt="Icon made by dmitri13 from www.flaticon.com"
                             />
                         </a>

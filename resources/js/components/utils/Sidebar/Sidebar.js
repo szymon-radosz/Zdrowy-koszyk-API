@@ -1,5 +1,8 @@
 import React, { useContext } from "react";
 import { MainContext } from "./../../MainContext";
+import dashboardIcon from "./../../../../assets/images/dashboard.png";
+import foodIcon from "./../../../../assets/images/food.png";
+import acceptIcon from "./../../../../assets/images/ok.png";
 
 const Sidebar = () => {
     const context = useContext(MainContext);
@@ -27,7 +30,7 @@ const Sidebar = () => {
                         >
                             <img
                                 className="sidebar-icon"
-                                src="/images/stats.png"
+                                src={dashboardIcon}
                                 alt="Icon made by Freepik from www.flaticon.com"
                                 title="Dashboard"
                             />
@@ -47,10 +50,10 @@ const Sidebar = () => {
                         )}
                     </div>
                 </li>
-                
+
                 <li
                     className={
-                        context.activeMenuSection === "Translations"
+                        context.activeMenuSection === "Products"
                             ? "sidebar__item sidebar__item--5 sidebar__item--active sidebar__item--active--5"
                             : "sidebar__item sidebar__item--5"
                     }
@@ -68,7 +71,7 @@ const Sidebar = () => {
                         >
                             <img
                                 className="sidebar-icon"
-                                src="/images/translator.png"
+                                src={foodIcon}
                                 alt="Icon made by Freepik from www.flaticon.com"
                                 title="Translations"
                             />
@@ -78,22 +81,18 @@ const Sidebar = () => {
                                 href="#"
                                 onClick={() => {
                                     context.handleChangePath("/products");
-                                    context.handlAactiveMenuSection(
-                                        "Products"
-                                    );
+                                    context.handlAactiveMenuSection("Products");
                                 }}
                             >
-                                <p className="sidebar__item--text">
-                                    Products
-                                </p>
+                                <p className="sidebar__item--text">Products</p>
                             </a>
                         )}
                     </div>
                 </li>
-                
+
                 <li
                     className={
-                        context.activeMenuSection === "Translations"
+                        context.activeMenuSection === "ProductsToAccept"
                             ? "sidebar__item sidebar__item--5 sidebar__item--active sidebar__item--active--5"
                             : "sidebar__item sidebar__item--5"
                     }
@@ -106,12 +105,14 @@ const Sidebar = () => {
                             href="#"
                             onClick={() => {
                                 context.handleChangePath("/products-to-accept");
-                                context.handlAactiveMenuSection("ProductsToAccept");
+                                context.handlAactiveMenuSection(
+                                    "ProductsToAccept"
+                                );
                             }}
                         >
                             <img
                                 className="sidebar-icon"
-                                src="/images/translator.png"
+                                src={acceptIcon}
                                 alt="Icon made by Freepik from www.flaticon.com"
                                 title="Translations"
                             />
@@ -120,7 +121,9 @@ const Sidebar = () => {
                             <a
                                 href="#"
                                 onClick={() => {
-                                    context.handleChangePath("/products-to-accept");
+                                    context.handleChangePath(
+                                        "/products-to-accept"
+                                    );
                                     context.handlAactiveMenuSection(
                                         "ProductsToAccept"
                                     );
@@ -133,7 +136,6 @@ const Sidebar = () => {
                         )}
                     </div>
                 </li>
-                
 
                 <li className="sidebar__item sidebar__item--7">
                     <div className="sidebar__item--wrapper"></div>

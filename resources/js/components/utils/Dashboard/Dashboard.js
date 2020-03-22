@@ -4,6 +4,8 @@ import { MainContext } from "./../../MainContext";
 import Header from "./utils/Header";
 import DashboardInfoRect from "./utils/DashboardInfoRect";
 import axios from "axios";
+import scanIcon from "./../../../../assets/images/scan.png";
+import acceptIcon from "./../../../../assets/images/ok-grey.png";
 
 class Dashboard extends Component {
     constructor(props) {
@@ -11,18 +13,17 @@ class Dashboard extends Component {
 
         this.state = {
             redirectLogin: true,
-            usersCount: 0,
-            ForumPostsCount: 0,
-            ForumCommentsCount: 0
+            weeklyScans: 0,
+            weeklyProductsToAccept: 0
         };
     }
 
-    getUsers = () => {
+    getScans = () => {
         return new Promise(resolve => {
             this.context.handleShowLoader(true);
             try {
                 axios
-                    .get(`${this.context.API_URL}get-users`, {
+                    .get(`${this.context.API_URL}get-weekly-scans`, {
                         headers: {
                             Authorization: `Bearer ${this.context.token}`
                         }
@@ -31,7 +32,7 @@ class Dashboard extends Component {
                         const { data } = response;
 
                         if (response.status === 200) {
-                            this.setState({ usersCount: data.result.users });
+                            this.setState({ weeklyScans: data.result.scans });
                         }
 
                         resolve(response);
@@ -47,54 +48,25 @@ class Dashboard extends Component {
         });
     };
 
-    getForumPosts = () => {
+    getProductsToAccept = () => {
         return new Promise(resolve => {
             this.context.handleShowLoader(true);
             try {
                 axios
-                    .get(`${this.context.API_URL}get-forum-posts`, {
-                        headers: {
-                            Authorization: `Bearer ${this.context.token}`
+                    .get(
+                        `${this.context.API_URL}get-weekly-products-to-accept`,
+                        {
+                            headers: {
+                                Authorization: `Bearer ${this.context.token}`
+                            }
                         }
-                    })
+                    )
                     .then(response => {
                         const { data } = response;
 
                         if (response.status === 200) {
                             this.setState({
-                                ForumPostsCount: data.result.forumPosts
-                            });
-                        }
-
-                        resolve(response);
-                    })
-                    .catch(err => {
-                        this.context.checkTokenExpiration(err.response.status);
-                    });
-            } catch (err) {
-                //console.log(err);
-            } finally {
-                this.context.handleShowLoader(false);
-            }
-        });
-    };
-
-    getForumComments = () => {
-        return new Promise(resolve => {
-            this.context.handleShowLoader(true);
-            try {
-                axios
-                    .get(`${this.context.API_URL}get-forum-comments`, {
-                        headers: {
-                            Authorization: `Bearer ${this.context.token}`
-                        }
-                    })
-                    .then(response => {
-                        const { data } = response;
-
-                        if (response.status === 200) {
-                            this.setState({
-                                ForumCommentsCount: data.result.forumComments
+                                weeklyProductsToAccept: data.result.products
                             });
                         }
 
@@ -113,9 +85,8 @@ class Dashboard extends Component {
 
     getStatsInfo = async () => {
         if (this.context.token) {
-            await this.getUsers();
-            await this.getForumPosts();
-            await this.getForumComments();
+            await this.getScans();
+            await this.getProductsToAccept();
         }
     };
 
@@ -126,7 +97,7 @@ class Dashboard extends Component {
     };
 
     render() {
-        const { usersCount, ForumPostsCount, ForumCommentsCount } = this.state;
+        const { weeklyScans, weeklyProductsToAccept } = this.state;
 
         return (
             <DashboardContainer>
@@ -134,21 +105,15 @@ class Dashboard extends Component {
 
                 <div className="dashboard__rect-container row">
                     <DashboardInfoRect
-                        icon="/images/group.png"
-                        headerText="New Users"
-                        number={usersCount}
+                        icon={scanIcon}
+                        headerText="Scans"
+                        number={weeklyScans}
                     />
 
                     <DashboardInfoRect
-                        icon="/images/forum-icon.png"
-                        headerText="New Forum Posts"
-                        number={ForumPostsCount}
-                    />
-
-                    <DashboardInfoRect
-                        icon="/images/forum-icon.png"
-                        headerText="New Forum Comments"
-                        number={ForumCommentsCount}
+                        icon={acceptIcon}
+                        headerText="Products waiting for accept"
+                        number={weeklyProductsToAccept}
                     />
                 </div>
             </DashboardContainer>

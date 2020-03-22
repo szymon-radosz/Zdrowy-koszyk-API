@@ -8,7 +8,26 @@ body {
     .custom-textarea {
         min-height: 150px;
     }
-
+    .navbar-brand {
+        img {
+            height: 25px;
+        }
+    }
+    .navbar-collapse {
+        justify-content: flex-end;
+        img {
+            height: 25px;
+        }
+    }
+    .sidebar__item--active {
+        img {
+            -webkit-filter: invert(100%) !important;
+        }
+    }
+    .pagination > li.active > a {
+        background-color: #5c8d89 !important;
+        border-color: #5c8d89 !important;
+    }
     .pagination {
         margin: 20px 0 0 0;
     }

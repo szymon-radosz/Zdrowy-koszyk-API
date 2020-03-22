@@ -25,6 +25,11 @@ Route::group(['middleware' => ['jwt.verify']], function () {
 
     Route::get('products-to-accept/get', 'ProductToAcceptController@index');
     Route::post('product-to-accept/update', 'ProductToAcceptController@update');
+
+    Route::get('get-weekly-scans', 'DashboardController@getWeeklyScans');
+    Route::get('get-weekly-products-to-accept', 'DashboardController@getWeeklyProductsToAccept');
+    
+    
 });
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
