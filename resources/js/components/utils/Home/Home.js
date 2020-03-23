@@ -70,7 +70,16 @@ const Home = () => {
                                     />
                                 </a>
 
-                                <img className="shop__icon" src={appStore} />
+                                <a
+                                    href="https://apps.apple.com/us/app/zdrowy-koszyk/id1502907248?l=pl&ls=1"
+                                    target="_blank"
+                                    title="Pobierz z App Store"
+                                >
+                                    <img
+                                        className="shop__icon"
+                                        src={appStore}
+                                    />
+                                </a>
                             </div>
                         </div>
                         <div className="page__main-section--content-right">
@@ -202,7 +211,14 @@ const Home = () => {
                         >
                             <img className="shop__icon" src={googlePlay} />
                         </a>
-                        <img className="shop__icon" src={appStore} />
+
+                        <a
+                            href="https://apps.apple.com/us/app/zdrowy-koszyk/id1502907248?l=pl&ls=1"
+                            target="_blank"
+                            title="Pobierz z App Store"
+                        >
+                            <img className="shop__icon" src={appStore} />
+                        </a>
                     </div>
                 </div>
             </div>
