@@ -17,12 +17,12 @@ const Menu = () => {
                         }}
                     />
                 </div>
-                <MenuBurger right>
+                {/* <MenuBurger right>
                     <p onClick={() => context.handleChangePath("")}>START</p>
                     <p onClick={() => context.handleChangePath("wyszukiwarka")}>
                         WYSZUKIWARKA
                     </p>
-                </MenuBurger>
+                </MenuBurger> */}
             </div>
         </div>
     );

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Head from "./../../global/Head";
-import Footer from "./../../global/Footer";
-import Menu from "./../../global/Menu";
+// import Head from "./../../global/Head";
+// import Footer from "./../../global/Footer";
+// import Menu from "./../../global/Menu";
 import { MainContext } from "./../../MainContext";
 import SingleProduct from "./SingleProduct/SingleProduct";
 import ReactPaginate from "react-paginate";
@@ -28,6 +28,7 @@ class SearchProducts extends Component {
     };
 
     handleProductSearch = text => {
+        console.log(text);
         return new Promise((resolve, reject) => {
             if (text.length > 3) {
                 this.setState({ query: text });
@@ -109,15 +110,18 @@ class SearchProducts extends Component {
         } = this.state;
 
         return (
-            <div className="search-page__container">
-                <Head title="Zdrowy Koszyk - Wyszukiwarka - darmowy skaner składu produktów" />
+            <div className="search-page__container" id="searchId">
+                {/* <Head title="Zdrowy Koszyk - Wyszukiwarka - darmowy skaner składu produktów" />
 
-                <Menu />
+                <Menu /> */}
 
-                <div className="page__main-section--container">
+                <div className="page__main-section--container page__main-section--container-search">
                     <div className="page__main-section--wrapper">
                         <div className="search-products__form--container">
-                            <h1>Wyszukiwarka produktów</h1>
+                            <div class="homepage__section-header__container">
+                                <h4>Szukaj produktów</h4>
+                                <div class="homepage__section-header__divider"></div>
+                            </div>
                             <input
                                 type="string"
                                 onChange={e =>
@@ -133,17 +137,13 @@ class SearchProducts extends Component {
                 </div>
 
                 <div className="search-page__product-list--container">
-                    {products && products.length > 0 ? (
-                        products.map((product, i) => {
-                            return <SingleProduct key={i} product={product} />;
-                        })
-                    ) : showLoader && showLoader === true ? (
-                        <p>loader</p>
-                    ) : (
-                        <p className="search-page__product-list--not-found">
-                            Brak produktów dla wyszukiwanej frazy.
-                        </p>
-                    )}
+                    {products && products.length > 0
+                        ? products.map((product, i) => {
+                              return (
+                                  <SingleProduct key={i} product={product} />
+                              );
+                          })
+                        : showLoader && showLoader === true && <p>loader</p>}
 
                     {products && products.length > 0 && (
                         <nav
@@ -168,7 +168,7 @@ class SearchProducts extends Component {
                     )}
                 </div>
 
-                <Footer />
+                {/* <Footer /> */}
             </div>
         );
     }

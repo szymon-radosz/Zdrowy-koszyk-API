@@ -6,6 +6,8 @@ import Head from "./../../global/Head";
 import Footer from "./../../global/Footer";
 import { MainContext } from "./../../MainContext";
 import Menu from "./../../global/Menu";
+import SearchProducts from "./../SearchProducts/SearchProducts";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 const Home = () => {
     const [intervalId, setIntervalID] = useState(0);
@@ -84,6 +86,11 @@ const Home = () => {
                         </div>
                         <div className="page__main-section--content-right">
                             <img src={phoneHeader} />
+                            <Link to="searchId" smooth={true}>
+                                <button className="search-products__btn">
+                                    Szukaj produktów
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -196,6 +203,8 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+
+            <SearchProducts />
 
             <div className="homepage__download--container">
                 <div className="homepage__download--wrapper">

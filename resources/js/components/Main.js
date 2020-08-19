@@ -74,11 +74,12 @@ class Main extends Component {
                 name: "ProductsToAccept",
                 Component: ProductsToAccept
             },
-            {
-                path: "/wyszukiwarka",
-                name: "SearchProducts",
-                Component: SearchProducts
-            },
+            // },
+            // {
+            //     path: "/wyszukiwarka",
+            //     name: "SearchProducts",
+            //     Component: SearchProducts
+            // },
             {
                 path: "/produkt/:barcode",
                 name: "ProductDetails",
