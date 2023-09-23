@@ -185,8 +185,8 @@ const Home = () => {
                         {activeDesctiption === 5 && (
                             <div className="homepage__single-description--container">
                                 <p>
-                                    Zbaj o swoje zdrowie. Aplikacja jest w pełni
-                                    darmowa.
+                                    Zadbaj o swoje zdrowie. Aplikacja jest w
+                                    pełni darmowa.
                                 </p>
                             </div>
                         )}
