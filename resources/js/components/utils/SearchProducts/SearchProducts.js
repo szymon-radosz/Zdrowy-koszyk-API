@@ -53,7 +53,7 @@ class SearchProducts extends Component {
                             resolve(response);
                         });
                 } catch (err) {
-                    //console.log(err);
+                    console.log(err);
                     reject(err);
                 } finally {
                     this.setState({ showLoader: false });

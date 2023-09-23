@@ -185,18 +185,8 @@ const Home = () => {
                         {activeDesctiption === 5 && (
                             <div className="homepage__single-description--container">
                                 <p>
-                                    Zbaj o swoje zdrowie. Aplikacja nie wymaga
-                                    rejestracji i jest w pełni darmowa. Została
-                                    stworzona przez{" "}
-                                    <a
-                                        href="https://tech-bulb.com/"
-                                        target="_blank"
-                                    >
-                                        autora
-                                    </a>
-                                    , aby poszerzać jego wiedzę w tworzeniu
-                                    oprogramowania i nie ma na celu pozyskiwania
-                                    korzyści majątkowych
+                                    Zbaj o swoje zdrowie. Aplikacja jest w pełni
+                                    darmowa.
                                 </p>
                             </div>
                         )}
