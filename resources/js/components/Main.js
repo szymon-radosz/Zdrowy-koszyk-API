@@ -127,7 +127,7 @@ class Main extends Component {
 
         setTimeout(() => {
             this.setState({ alertMessage: "", alertStatus: "" });
-        }, 4000);
+        }, 10000);
     };
 
     handleShowLoader = status => {

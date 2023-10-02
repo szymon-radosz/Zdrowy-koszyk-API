@@ -28,7 +28,6 @@ class SearchProducts extends Component {
     };
 
     handleProductSearch = text => {
-        console.log(text);
         return new Promise((resolve, reject) => {
             if (text.length > 3) {
                 this.setState({ query: text });
@@ -67,38 +66,50 @@ class SearchProducts extends Component {
     };
 
     handlePageClick = (pageData, searchData) => {
-        return new Promise(async (resolve, reject) => {
-            const { query } = this.state;
-            axios
-                .get(
-                    `${
-                        this.context.API_URL
-                    }product/search/${query}?page=${pageData.selected + 1}`,
-                    {
-                        headers: {
-                            Authorization: `Bearer ${this.context.token}`
-                        }
-                    }
-                )
-                .then(response => {
-                    const { data } = response;
+        // console.log(["download app mate", this?.context]);
 
-                    this.setState({
-                        products: []
-                    });
+        this?.context?.handleShowAlert(
+            "Pobierz aplikację na swój telefon i skanuj bez limitów",
+            "success"
+        );
 
-                    this.setState({
-                        products: data.result.data,
-                        currentPage: pageData.selected,
-                        from: data.result.from
-                    });
-
-                    resolve(products);
-                })
-                .catch(function(error) {
-                    return reject(error);
-                });
+        this.setState({
+            products: [],
+            currentPage: 1,
+            query: ""
         });
+        // return new Promise(async (resolve, reject) => {
+        //     const { query } = this.state;
+        //     axios
+        //         .get(
+        //             `${
+        //                 this.context.API_URL
+        //             }product/search/${query}?page=${pageData.selected + 1}`,
+        //             {
+        //                 headers: {
+        //                     Authorization: `Bearer ${this.context.token}`
+        //                 }
+        //             }
+        //         )
+        //         .then(response => {
+        //             const { data } = response;
+
+        //             this.setState({
+        //                 products: []
+        //             });
+
+        //             this.setState({
+        //                 products: data.result.data,
+        //                 currentPage: pageData.selected,
+        //                 from: data.result.from
+        //             });
+
+        //             resolve(products);
+        //         })
+        //         .catch(function(error) {
+        //             return reject(error);
+        //         });
+        // });
     };
 
     render() {
