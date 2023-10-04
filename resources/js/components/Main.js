@@ -29,8 +29,8 @@ class Main extends Component {
             activeMenuSection: "",
             // APP_URL: "http://127.0.0.1:8080",
             // API_URL: "http://127.0.0.1:8080/api/",
-            APP_URL: "http://zdrowy-koszyk.radoszszymon.usermd.net/",
-            API_URL: "http://zdrowy-koszyk.radoszszymon.usermd.net/api/",
+            APP_URL: "https://zdrowy-koszyk.radoszszymon.usermd.net/",
+            API_URL: "https://zdrowy-koszyk.radoszszymon.usermd.net/api/",
             showLoader: false,
             alertMessage: "",
             alertStatus: "",
@@ -38,7 +38,7 @@ class Main extends Component {
             allowedPaths: [
                 "wyszukiwarka",
                 "login-dashboard",
-                "register-dashboard",
+                // "register-dashboard",
                 "polityka-prywatnosci",
                 "produkt"
             ],
@@ -59,11 +59,11 @@ class Main extends Component {
                 name: "Login",
                 Component: Login
             },
-            {
-                path: "/register-dashboard",
-                name: "RegisterAdmin",
-                Component: RegisterAdmin
-            },
+            // {
+            //     path: "/register-dashboard",
+            //     name: "RegisterAdmin",
+            //     Component: RegisterAdmin
+            // },
             {
                 path: "/products",
                 name: "Products",
