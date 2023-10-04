@@ -8,7 +8,7 @@
         <title>zielonyparagon.pl - Darmowy skaner składu produktów</title>
         <meta name="description" content="Skanuj zakupy i dbaj o swoje zdrowie">
         <meta name="keywords" content="skaner produktów, zdrowie, dieta, odżywianie, zakupy">
-        <meta name="author" content="Szymon Radosz - https://radoszszymon.usermd.net/">
+        <meta name="author" content="Szymon Radosz - radoszszymon.usermd.net">
         <link rel="icon" type="image/png" href="images/favicon.png" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="{{mix('css/app.css')}}?v=<?php echo date('Y-m-d H:i:s') ?>">
