@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <div className="homepage__footer--container">
             <div className="homepage__footer--wrapper">
-                <p>Zdrowy Koszyk @{date}</p>
+                <p>zielonyparagon.pl @{date}</p>
                 <p>
                     <a
                         href="https://www.radoszszymon.usermd.net/"

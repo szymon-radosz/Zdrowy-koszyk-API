@@ -50,7 +50,7 @@ const ProductDetails = () => {
 
     return (
         <div className="search-page__container">
-            <Head title="Zdrowy Koszyk - Szczegóły produktu - darmowy skaner składu produktów" />
+            <Head title="zielonyparagon.pl - Darmowy skaner składu produktów" />
 
             <Menu />
 

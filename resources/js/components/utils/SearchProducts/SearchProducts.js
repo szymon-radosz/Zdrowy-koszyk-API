@@ -122,7 +122,7 @@ class SearchProducts extends Component {
 
         return (
             <div className="search-page__container" id="searchId">
-                {/* <Head title="Zdrowy Koszyk - Wyszukiwarka - darmowy skaner składu produktów" />
+                {/* <Head title="zielonyparagon.pl - Darmowy skaner składu produktów" />
 
                 <Menu /> */}
 

@@ -46,7 +46,7 @@ const Home = () => {
 
     return (
         <>
-            <Head title="Zdrowy Koszyk - darmowy skaner składu produktów" />
+            <Head title="zielonyparagon.pl - Darmowy skaner składu produktów" />
 
             <Menu forceSearchPath={false} />
 
@@ -54,7 +54,7 @@ const Home = () => {
                 <div className="page__main-section--wrapper">
                     <div className="page__main-section--content">
                         <div className="page__main-section--content-left">
-                            <h1>Zdrowy Koszyk</h1>
+                            <h1>Zielony Paragon</h1>
                             <h2>Darmowy skaner składu produktów</h2>
 
                             <div className="page__main-section--divider"></div>
