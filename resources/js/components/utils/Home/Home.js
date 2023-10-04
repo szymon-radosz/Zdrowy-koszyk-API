@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import phoneHeader from "./../../../../assets/images/phone-header.png";
+import phoneHeader from "./../../../../assets/images/phone-header-new.png";
 import appStore from "./../../../../assets/images/appStore.png";
 import googlePlay from "./../../../../assets/images/googlePlay.png";
 import Head from "./../../global/Head";

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import logo from "./../../../assets/images/logo.png";
+import logo from "./../../../assets/images/logo-new.png";
 import { MainContext } from "./../MainContext";
 import { slide as MenuBurger } from "react-burger-menu";
 
