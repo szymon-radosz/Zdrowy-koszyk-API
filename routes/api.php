@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 
+Route::get('product/search/{querySearch}', 'ProductController@findBySearchInput');
+
 Route::post('url/new', 'UrlController@store');
 Route::get('product/url/get', 'UrlController@index');
 
@@ -16,8 +18,8 @@ Route::post('checkIfEmailExists', 'UserController@checkIfEmailExists');
 // Route::get('product/find/{barcode}/{deviceId?}/{deviceBrand?}', array('middleware' => 'cors', 'uses' => 'ProductController@find'));
 // Route::get('product/search/{querySearch}', array('middleware' => 'cors', 'uses' => 'ProductController@findBySearchInput'));
 
-Route::get('product/find/{barcode}/{deviceId?}/{deviceBrand?}', 'ProductController@find');
-Route::get('product/search/{querySearch}', 'ProductController@findBySearchInput');
+// Route::get('product/find/{barcode}/{deviceId?}/{deviceBrand?}', 'ProductController@find');
+
 
 Route::group(['middleware' => ['jwt.verify']], function () {
     Route::get('user', 'UserController@getAuthenticatedUser');
